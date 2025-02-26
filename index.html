@@ -3,215 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Site Maintenance</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background-color: #0a192f;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-family: Arial, sans-serif;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .maintenance-text {
-            color: #ffffff;
-            font-size: 2.5rem;
-            font-weight: bold;
-            text-align: center;
-            animation: float 3s ease-in-out infinite;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-            z-index: 1;
-        }
-
-        @keyframes float {
-            0% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-20px);
-            }
-            100% {
-                transform: translateY(0px);
-            }
-        }
-
-        .star {
-            position: absolute;
-            width: 2px;
-            height: 2px;
-            background: #ffffff;
-            border-radius: 50%;
-            animation: shooting-star linear infinite;
-        }
-
-        .spaceship {
-            position: absolute;
-            width: 40px;
-            height: 20px;
-            animation: fly-spaceship linear infinite;
-        }
-
-        .spaceship::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: #64ffda;
-            transform: translateY(-50%);
-            clip-path: polygon(0 0, 100% 50%, 0 100%);
-        }
-
-        .spaceship::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -10px;
-            width: 10px;
-            height: 100%;
-            background: linear-gradient(90deg, #ff416c, transparent);
-            opacity: 0.7;
-        }
-
-        .ufo {
-            position: absolute;
-            width: 60px;
-            height: 25px;
-            animation: float-ufo linear infinite;
-        }
-
-        .ufo::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 30px;
-            height: 15px;
-            background: #a8ff78;
-            border-radius: 50% 50% 0 0;
-        }
-
-        .ufo::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 10px;
-            background: #78ffd6;
-            border-radius: 10px;
-        }
-
-        @keyframes shooting-star {
-            0% {
-                transform: translateX(100vw) translateY(0);
-                opacity: 1;
-            }
-            70% {
-                opacity: 1;
-            }
-            100% {
-                transform: translateX(-100vw) translateY(100vh);
-                opacity: 0;
-            }
-        }
-
-        @keyframes fly-spaceship {
-            0% {
-                transform: translateX(-100px) translateY(0);
-            }
-            100% {
-                transform: translateX(calc(100vw + 100px)) translateY(-100px);
-            }
-        }
-
-        @keyframes float-ufo {
-            0% {
-                transform: translateX(100vw) translateY(50vh);
-            }
-            50% {
-                transform: translateX(50vw) translateY(30vh);
-            }
-            100% {
-                transform: translateX(-100px) translateY(60vh);
-            }
-        }
-    </style>
+    <title>Krishna Properties - Trusted Real Estate in Hisar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="maintenance-text">Website is under maintenance</div>
-    <script>
-        function createStar() {
-            const star = document.createElement('div');
-            star.className = 'star';
-            
-            const startY = Math.random() * window.innerHeight;
-            star.style.top = `${startY}px`;
-            
-            const duration = 2 + Math.random() * 4;
-            star.style.animationDuration = `${duration}s`;
-            
-            document.body.appendChild(star);
-            
-            setTimeout(() => {
-                star.remove();
-            }, duration * 1000);
-        }
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav-container">
+                <a href="#" class="logo">
+                    <img src="logo.png" alt="Krishna Properties Logo">
+                </a>
+                <div class="nav-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#maps">Maps</a>
+                    <a href="#location">Location</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
 
-        function createSpaceship() {
-            const spaceship = document.createElement('div');
-            spaceship.className = 'spaceship';
-            
-            const startY = Math.random() * (window.innerHeight - 100);
-            spaceship.style.top = `${startY}px`;
-            
-            const duration = 6 + Math.random() * 4;
-            spaceship.style.animationDuration = `${duration}s`;
-            
-            document.body.appendChild(spaceship);
-            
-            setTimeout(() => {
-                spaceship.remove();
-            }, duration * 1000);
-        }
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Premium Plots in Haryana Locations</h1>
+            <h2>Specialist in HUDA Sectors of Hisar, Hansi, Fatehabad, Sirsa & Kaithal</h2>
+            <p>Trusted Real Estate Services Since 2002</p>
+            <a href="#contact" class="btn">Contact Us Today</a>
+        </div>
+        <a href="#about" class="scroll-arrow">
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </section>
 
-        function createUFO() {
-            const ufo = document.createElement('div');
-            ufo.className = 'ufo';
-            
-            const duration = 15 + Math.random() * 5;
-            ufo.style.animationDuration = `${duration}s`;
-            
-            document.body.appendChild(ufo);
-            
-            setTimeout(() => {
-                ufo.remove();
-            }, duration * 1000);
-        }
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">About Krishna Properties</h2>
+            <div class="about-grid">
+                <div class="about-content reveal">
+                    <p>With over 20+ years of experience in real estate, we specialize in residential and commercial plots in prime Hisar locations. Our commitment to transparency and legal compliance has made us the most trusted name in Sector 14 real estate.</p>
+                    <p>We pride ourselves on providing personalized service and expert guidance throughout your property journey. Our deep knowledge of local markets ensures you make informed investment decisions.</p>
+                    <div class="achievements">
+                        <div class="achievement-item">
+                            <h3>500+</h3>
+                            <p>Successful Transactions</p>
+                        </div>
+                        <div class="achievement-item">
+                            <h3>98%</h3>
+                            <p>Client Satisfaction Rate</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-img reveal">
+                    <img src="about-img.jpg" alt="About Krishna Properties">
+                </div>
+            </div>
+        </div>
+    </section>
 
-        // Create elements at intervals
-        setInterval(createStar, 200);
-        setInterval(createSpaceship, 3000);
-        setInterval(createUFO, 8000);
+    <!-- PDF Section (Maps) -->
+    <section class="pdf-section" id="maps">
+        <div class="container">
+            <h2 class="section-title">Location Maps</h2>
+            <div class="pdf-container">
+                <div class="pdf-item reveal">
+                    <h3>Hisar Sectors</h3>
+                    <p>Comprehensive overview of all HUDA sectors in Hisar with key landmarks</p>
+                    <a href="assets/pdf/Krishna Prop.pdf" target="_blank" class="pdf-view-btn">View PDF</a>
+                    <a href="assets/pdf/Krishna Prop.pdf" download class="btn">Download Map</a>
+                </div>
+                <div class="pdf-item reveal">
+                    <h3>Sector 14 & 33</h3>
+                    <p>Detailed map of our prime investment areas with plot numbers and dimensions</p>
+                    <a href="assets/pdf/Krishna Prop (Sec-14-33).pdf" target="_blank" class="pdf-view-btn">View PDF</a>
+                    <a href="assets/pdf/Krishna Prop (Sec-14-33).pdf" download class="btn">Download Map</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        // Initial elements
-        for(let i = 0; i < 20; i++) {
-            createStar();
-        }
-        createSpaceship();
-        createUFO();
-    </script>
-</body>
+    <!-- Listings Section (Direction) -->
+    <section class="listings" id="location">
+        <div class="container">
+            <h2 class="section-title">Find Our Office</h2>
+            <div class="property-grid">
+                <div class="property-card reveal">
+                    <div class="property-map">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27869.516561096272!2d75.69711856247639!3d29.173818765841617!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391233da031a88e5%3A0x292b63ef06382a17!2sKrishna%20Properties!5e0!3m2!1sen!2sus!4v1740584699055!5m2!1sen!2sus" 
+                            allowfullscreen 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                        <div class="map-overlay">
+                            <h3>Krishna Properties Office</h3>
+                            <p>SSB #307 Sector 14, Hisar, Haryana 125001</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-grid">
+                <div class="contact-info reveal">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>SSB #307 Sector 14, Hisar<br>Haryana 125001</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <p>+91 9812028313</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>krishna.properties307@gmail.com</p>
+                    </div>
+                    <!-- <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div> -->
+                </div>
+                <form class="contact-form reveal">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <input type="tel" placeholder="Phone Number" required>
+                    <textarea rows="5" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Krishna Properties</h3>
+                    <p>Your Trusted Real Estate Partner</p>
+                </div>
+            </div>
+            <p class="copyright">&copy; 2025 Krishna Properties. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+   <!-- WhatsApp Floating Button -->
+<a href="https://wa.me/919812028313" class="whatsapp-float" target="_blank" aria-label="Chat with us on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+
+    <script src="script.js"></script>
 </body>
 </html>
