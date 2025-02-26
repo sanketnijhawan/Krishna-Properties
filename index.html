@@ -114,40 +114,56 @@
     </section>
 
     <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <h2 class="section-title">Contact Us</h2>
-            <div class="contact-grid">
-                <div class="contact-info reveal">
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <p>SSB #307 Sector 14, Hisar<br>Haryana 125001</p>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <p>+91 9812028313</p>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <p>krishna.properties307@gmail.com</p>
-                    </div>
-                    <!-- <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div> -->
+<section class="contact" id="contact">
+    <div class="container">
+        <h2 class="section-title">Contact Us</h2>
+        <div class="contact-grid">
+            <div class="contact-info reveal">
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>SSB #307 Sector 14, Hisar<br>Haryana 125001</p>
                 </div>
-                <form class="contact-form reveal">
-                    <input type="text" placeholder="Your Name" required>
-                    <input type="email" placeholder="Your Email" required>
-                    <input type="tel" placeholder="Phone Number" required>
-                    <textarea rows="5" placeholder="Your Message" required></textarea>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
-                </form>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <p>+91 9812028313</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <p>krishna.properties307@gmail.com</p>
+                </div>
             </div>
+
+            <!-- Mailto Contact Form -->
+            <form class="contact-form reveal" onsubmit="sendMail(event)">
+                <input type="text" id="name" placeholder="Your Name" required>
+                <input type="email" id="email" placeholder="Your Email" required>
+                <input type="tel" id="phone" placeholder="Phone Number" required>
+                <textarea id="message" placeholder="Your Message" required></textarea>
+                
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
         </div>
-    </section>
+    </div>
+</section>
+
+<!-- JavaScript for Mailto -->
+<script>
+    function sendMail(event) {
+        event.preventDefault(); // Prevent default form submission
+
+        let name = document.getElementById('name').value;
+        let email = document.getElementById('email').value;
+        let phone = document.getElementById('phone').value;
+        let message = document.getElementById('message').value;
+
+        let subject = encodeURIComponent("New Contact Form Submission");
+        let body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nMessage:\n${message}`);
+
+        let mailtoLink = `mailto:krishna.properties307@gmail.com?subject=${subject}&body=${body}`;
+        
+        window.location.href = mailtoLink;
+    }
+</script>
 
     <!-- Footer -->
     <footer>
